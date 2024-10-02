@@ -12,13 +12,15 @@
   <li *ngFor="let item of itemLista; let i = index">
     <input type="checkbox" [(ngModel)]="item.compra" (change)="mudaCompra(i)" /> <!-- Checkbox -->
     <span [class.completed]="item.compra">{{ item.nome }}</span> <!-- Exibe o nome do item -->
+    <button (click)="removeItem(i)" >remover</button>
   </li>
 </ul>
 
 <h2>Comprados</h2>
 
 <ul>
-  <li *ngFor="let item of itemComprado">
+  <li *ngFor="let item of itemComprado; let i = index">
     <span>{{item}}</span>
+    <button (click)="removeItemComprado(i)" >remover</button>
   </li>
 </ul>
