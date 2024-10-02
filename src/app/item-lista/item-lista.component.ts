@@ -11,15 +11,26 @@ import { CommonModule } from '@angular/common';
   styleUrl: './item-lista.component.css'
 })
 export class ItemListaComponent {
-
-  item: string = '';
-  itemLista: string[] = [];
+  item: string = '';               // Nome do item
+  itemLista: { nome: string; compra: boolean }[] = []; // Lista de itens com status
+  itemComprado: string[] = [];
 
   onSubmit(form: any) {
-    if (form.valid) {
-      this.itemLista.push(this.item);
-      this.item = '';
-      console.log('Item adicionado:', this.itemLista);
+    if (form.valid && this.item.trim() !== '') {
+      this.itemLista.push({ nome: this.item, compra: false }); // Adiciona item com status 'não comprado'
+      this.item = ''; // Limpa o campo de entrada
     }
   }
+
+  mudaCompra(index: number) {
+    this.itemLista[index].compra = !this.itemLista[index].compra;// Inverte o estado 'bought'
+
+    this.itemComprado.push(this.itemLista[index].nome);
+
+    this.itemLista.splice(index, 1);
+
+  }
+
+
+
 }

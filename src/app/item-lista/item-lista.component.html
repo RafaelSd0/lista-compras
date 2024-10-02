@@ -2,19 +2,23 @@
 <form #shoppingForm="ngForm" (ngSubmit)="onSubmit(shoppingForm)">
   <span>Nome do Item:</span>
   <input type="text" id="item" placeholder="Digite o nome do Item" [(ngModel)]="item" name="item" required>
-
-
-
-
-
+  <span>Comprado</span>
   <button type="submit" [disabled]="shoppingForm.invalid">Enviar</button>
 </form>
 
-
-
+<h2>Não comprados</h2>
 
 <ul>
-  <li *ngFor="let item of itemLista">{{ item }}
-    
+  <li *ngFor="let item of itemLista; let i = index">
+    <input type="checkbox" [(ngModel)]="item.compra" (change)="mudaCompra(i)" /> <!-- Checkbox -->
+    <span [class.completed]="item.compra">{{ item.nome }}</span> <!-- Exibe o nome do item -->
+  </li>
+</ul>
+
+<h2>Comprados</h2>
+
+<ul>
+  <li *ngFor="let item of itemComprado">
+    <span>{{item}}</span>
   </li>
 </ul>
