@@ -3,7 +3,7 @@
   <span>Nome do Item:</span>
   <input type="text" id="item" placeholder="Digite o nome do Item" [(ngModel)]="item" name="item" required>
 
-  
+
 
 
 
@@ -13,4 +13,8 @@
 
 
 
-<p>{{item}}</p>
+<ul>
+  <li *ngFor="let item of itemLista">{{ item }}
+    
+  </li>
+</ul>
