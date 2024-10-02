@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 
 export class ItemListaComponent {
   item: string = ''; // Nome do item
-  itemLista: { nome: string; compra: boolean }[] = []; // Lista de itens não comprados
+  itemLista: { nome: string; compra: boolean}[] = []; // Lista de itens não comprados
   itemComprado: string[] = []; // Lista de itens comprados
 
   ngOnInit() {
@@ -25,6 +25,13 @@ export class ItemListaComponent {
       this.addItem(this.item); // Adiciona o item se o formulário for válido
       this.item = ''; // Limpa o campo de entrada
     }
+  }
+
+  toggleEdit(item: any) {
+
+    item.nome = window.prompt('insira o novo nome');
+
+    this.saveItems();// Salva a lista atualizada ao finalizar a edição
   }
 
   addItem(name: string) {
