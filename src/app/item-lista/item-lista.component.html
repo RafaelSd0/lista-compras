@@ -1,1 +1,16 @@
-<p>item-lista works!</p>
+
+<form #shoppingForm="ngForm" (ngSubmit)="onSubmit(shoppingForm)">
+  <span>Nome do Item:</span>
+  <input type="text" id="item" placeholder="Digite o nome do Item" [(ngModel)]="item" name="item" required>
+
+  
+
+
+
+  <button type="submit" [disabled]="shoppingForm.invalid">Enviar</button>
+</form>
+
+
+
+
+<p>{{item}}</p>
