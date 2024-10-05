@@ -1,27 +1,29 @@
 
-<form #shoppingForm="ngForm" (ngSubmit)="onSubmit(shoppingForm)">
-  <span>Nome do Item:</span>
-  <input type="text" id="item" placeholder="Digite o nome do Item" [(ngModel)]="item" name="item" required>
-  <span>Comprado</span>
-  <button type="submit" [disabled]="shoppingForm.invalid">Enviar</button>
+<form #shoppingForm="ngForm" (ngSubmit)="onSubmit(shoppingForm)" class="py-10 flex gap-5 bg-slate-50 max-w-screen-lg w-screen justify-center items-center rounded-lg">
+  <span class="text-lg md:text-xl lg:text-2xl">Nome do Item:</span>
+  <input type="text" id="item" placeholder="Digite o nome do Item" [(ngModel)]="item" name="item" required class=" xl:text-xl md:text-lg text-base w-60 md:w-80">
+  <button type="submit" [disabled]="shoppingForm.invalid" class=" bg-green-600 p-1 border border-black shadow shadow-white hover:bg-green-600/90 transition duration-300 ease-in-out rounded ">Enviar</button>
 </form>
-
-<h2 class="text-red-600">Não comprados</h2>
+<br>
+<span class="pl-3 xl:text-4xl md:text-3xl text-2xl">Não comprados</span>
 
 <ul>
-  <li *ngFor="let item of itemLista; let i = index">
-    <input type="checkbox" [(ngModel)]="item.compra" (change)="mudaCompra(i)" /> <!-- Checkbox -->
-    <span [class.completed]="item.compra">{{ item.nome }}</span> <!-- Exibe o nome do item -->
-    <button (click)="toggleEdit(item)">Editar</button> <!-- Botão para alternar entre editar e salvar -->
-    <button (click)="removeItem(i)" >remover</button>
+  <li *ngFor="let item of itemLista; let i = index" class="flex gap-5 bg-slate-50 py-2 justify-between items-center">
+    <span [class.completed]="item.compra" class="pl-5 xl:text-xl md:text-lg text-base w-96 text-wrap">{{ item.nome }}  </span>
+    <div class="flex justify-around gap-3 pr-5">
+      <input type="checkbox" [(ngModel)]="item.compra" (change)="mudaCompra(i)" class="h-8 w-8 text-indigo-600 border-gray-300 rounded" /> <!-- Checkbox -->
+      <button (click)="toggleEdit(item)" class=" bg-green-600 p-1 border border-black shadow shadow-white hover:bg-green-600/90 transition duration-300 ease-in-out rounded ">Editar</button> <!-- Botão para alternar entre editar e salvar -->
+      <button (click)="removeItem(i)" class=" bg-red-600 p-1 border border-black shadow shadow-white hover:bg-red-600/90 transition duration-300 ease-in-out rounded ">remover</button>
+    </div>
   </li>
 </ul>
+<br>
 
-<h2>Comprados</h2>
+<span class="pl-3 xl:text-4xl md:text-3xl text-2xl">Comprados</span>
 
-<ul>
-  <li *ngFor="let item of itemComprado; let i = index">
-    <span>{{item}}</span>
-    <button (click)="removeItemComprado(i)" >remover</button>
+<ul >
+  <li *ngFor="let item of itemComprado; let i = index" class="flex gap-5 bg-slate-50 py-2 justify-between items-center">
+    <span class="pl-5 xl:text-xl md:text-lg text-base w-96 text-wrap line-through text-red-500">{{item}} </span>
+    <button (click)="removeItemComprado(i)" class=" bg-red-600 p-1 border border-black shadow shadow-white hover:bg-red-600/90 transition duration-300 ease-in-out rounded " >remover</button>
   </li>
 </ul>
