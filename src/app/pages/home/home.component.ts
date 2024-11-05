@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ItemListaComponent } from '../item-lista/item-lista.component';
+import { ItemListaComponent } from '../../components/item-lista/item-lista.component';
 @Component({
   selector: 'app-home',
   standalone: true,
