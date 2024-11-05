@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,16 @@ import { Component } from '@angular/core';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-login() {
-throw new Error('Method not implemented.');
-}
+
+  constructor(private auth: AuthService) {}
+
+  login() {
+
+  this.auth.loginWithRedirect();
+
+  }
+
+
 logout() {
 throw new Error('Method not implemented.');
 }
