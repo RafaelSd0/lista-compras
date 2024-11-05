@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,9 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class LoginComponent {
 
-  constructor(private auth: AuthService) {}
+  constructor(@Inject(DOCUMENT) private document: Document, private auth: AuthService) {}
+
+
 
   login() {
 
@@ -19,8 +22,14 @@ export class LoginComponent {
   }
 
 
-logout() {
-throw new Error('Method not implemented.');
-}
+  logout() {
+
+    this.auth.logout({
+
+    logoutParams: {returnTo: this.document.location.origin,},
+
+    });
+
+  }
 
 }
