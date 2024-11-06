@@ -16,15 +16,19 @@
   ],
   "shoppingLists": [
     {
-      "userId": "e835",
-      "comprados": [
-        { "id": 1, "title": "Apples" },
-        { "id": 2, "title": "Oranges" }
+      "id": "f331",
+      "userId": "google-oauth2|111960071203575145793",
+      "itemLista": [
+        {
+          "id": 1,
+          "nome": "tevaldo"
+        },
+        {
+          "id": 2,
+          "nome": "cavalo"
+        }
       ],
-      "naoComprados": [
-        { "id": 3, "title": "Bread" },
-        { "id": 4, "title": "Milk" }
-      ]
+      "itemComprado": []
     }
   ]
 }
