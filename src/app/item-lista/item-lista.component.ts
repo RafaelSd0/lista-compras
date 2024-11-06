@@ -64,16 +64,16 @@ export class ItemListaComponent {
   // Método para adicionar um item à lista não comprada
   addItem(nome: string) {
     if (nome.trim()) {
-      this.itemLista.push({ id: this.id++, nome }); // Adiciona o novo item à lista não comprada
-      this.salvarLista(); // Salva a lista após adicionar o item
+      this.itemLista.push({ id: this.id++, nome });
+      this.salvarLista();
     }
   }
 
   // Método chamado quando o formulário é enviado
   onSubmit(form: any) {
     if (form.valid && this.item.trim() !== '') {
-      this.addItem(this.item); // Adiciona o item se o formulário for válido
-      this.item = ''; // Limpa o campo de entrada
+      this.addItem(this.item);
+      this.item = '';
     }
   }
 
@@ -82,27 +82,27 @@ export class ItemListaComponent {
     const novoNome = window.prompt('Insira o novo nome:', item.nome);
     if (novoNome) {
       item.nome = novoNome;
-      this.salvarLista(); // Salva a lista após editar o item
+      this.salvarLista();
     }
   }
 
   // Método para mover um item da lista não comprada para a lista comprada
   mudaCompra(index: number) {
-    const item = this.itemLista.splice(index, 1)[0]; // Remove o item da lista não comprada
-    this.itemComprado.push(item); // Adiciona o item à lista comprada
-    this.salvarLista(); // Salva a lista após mover o item
+    const item = this.itemLista.splice(index, 1)[0];
+    this.itemComprado.push(item);
+    this.salvarLista();
   }
 
   // Método para remover um item da lista não comprada
   removeItem(index: number) {
-    this.itemLista.splice(index, 1); // Remove o item da lista não comprada
-    this.salvarLista(); // Salva a lista após remover o item
+    this.itemLista.splice(index, 1);
+    this.salvarLista();
   }
 
   // Método para remover um item da lista comprada
   removeItemComprado(index: number) {
-    this.itemComprado.splice(index, 1); // Remove o item da lista comprada
-    this.salvarLista(); // Salva a lista após remover o item comprado
+    this.itemComprado.splice(index, 1);
+    this.salvarLista(); 
   }
 
 

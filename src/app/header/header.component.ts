@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  menuAberto: boolean = false;
   profile!: User | null | undefined;
 
   constructor(public auth: AuthService, @Inject(DOCUMENT) private document: Document) {}
@@ -41,16 +41,13 @@ export class HeaderComponent {
     });
   }
 
-  //Mostrar menu mara usuarios do Mobile
-  mostrarMenu(aberto:boolean): void{
-    aberto = false;
-    const menu = this.document.querySelector('#menu') as HTMLDivElement;
-    if (aberto) {
-      menu.classList.remove('hidden');
-      menu.classList.add('flex');
-    } else {
-      menu.classList.remove('flex');
-      menu.classList.add('hidden');
-    }
+  //Mostrar menu para usuarios do Mobile
+  mostrarMenu(): void {
+    const menu = this.document.querySelector('#menu') as HTMLDivElement | null;
+    if (!menu) return;
+
+    this.menuAberto = !this.menuAberto;
+    menu.classList.toggle('hidden', !this.menuAberto);
+    menu.classList.toggle('flex', this.menuAberto);
   }
 }
