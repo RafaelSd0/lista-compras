@@ -1,7 +1,16 @@
 <app-header></app-header>
 
 
-<router-outlet />
+<div *ngIf="!(auth.isAuthenticated$ | async)" class="flex flex-col items-center justify-center bg-slate-100 pt-5">
+  <h1>Por Favor faça o login para Continuar</h1>
+  <p>para poder acessa a lista é necessario o login</p>
+</div>
+
+<div class="flex items-center justify-center bg-slate-100 pt-5">
+  <router-outlet></router-outlet>
+</div>
+
+
 
 <app-footer></app-footer>
 

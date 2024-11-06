@@ -9,7 +9,7 @@
 
 <ul>
   <li *ngFor="let item of itemLista; let i = index" class="flex gap-5 bg-slate-50 py-2 justify-between items-center">
-    <span [class.completed]="item.compra" class="pl-5 xl:text-xl md:text-lg text-base w-96 text-wrap">{{ item.nome }}  </span>
+    <span [class.completed]="item.compra" class="pl-5 xl:text-xl md:text-lg text-base md:max-w-96 max-w-64 overflow-auto">{{ item.nome }}  </span>
     <div class="flex justify-around gap-3 pr-5">
       <input type="checkbox" [(ngModel)]="item.compra" (change)="mudaCompra(i)" class="h-8 w-8 text-indigo-600 border-gray-300 rounded" /> <!-- Checkbox -->
       <button (click)="toggleEdit(item)" class=" bg-green-600 p-1 border border-black shadow shadow-white hover:bg-green-600/90 transition duration-300 ease-in-out rounded ">Editar</button> <!-- Botão para alternar entre editar e salvar -->
@@ -23,7 +23,7 @@
 
 <ul >
   <li *ngFor="let item of itemComprado; let i = index" class="flex gap-5 bg-slate-50 py-2 justify-between items-center">
-    <span class="pl-5 xl:text-xl md:text-lg text-base w-96 text-wrap line-through text-red-500">{{item}} </span>
+    <span class="pl-5 xl:text-xl md:text-lg text-base md:max-w-96 max-w-64 line-through text-red-500 overflow-auto">{{item}} </span>
     <button (click)="removeItemComprado(i)" class=" bg-red-600 p-1 border border-black shadow shadow-white hover:bg-red-600/90 transition duration-300 ease-in-out rounded " >remover</button>
   </li>
 </ul>
