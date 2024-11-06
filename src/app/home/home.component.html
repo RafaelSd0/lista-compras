@@ -1,5 +1,6 @@
 <section class="flex flex-col justify-center items-center h-screen w-screen text-center">
-  <h1 class="font-extrabold px-5">Olá, bem vindo(a) a Lista Fácil</h1>
-  <p class="w-3/4 ">Bem-vindo a Lista Fácil! Aqui, você pode organizar suas listas de compras de forma prática e eficiente. Autentique-se para acessar suas listas, adicionar itens, marcar produtos como comprados e manter tudo em ordem. Boas compras e boa organização! 🛒</p>
+  <span class="font-extrabold px-5 text-3xl md:text-7xl">Olá, bem vindo(a) a Lista Fácil</span>
+  <br>
+  <span class="w-3/4 md:text-lg text-base ">Bem-vindo a Lista Fácil! Aqui, você pode organizar suas listas de compras de forma prática e eficiente. Autentique-se para acessar suas listas, adicionar itens, marcar produtos como comprados e manter tudo em ordem. Boas compras e boa organização! 🛒</span>
   <button *ngIf="!(auth.isAuthenticated$ | async)" (click)="login()" class="bg-blue-500 hover:bg-blue-700 text-white md:font-bold py-1 md:py-2 px-2 md:px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ">Log in</button>
 </section>
