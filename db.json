@@ -1,0 +1,30 @@
+{
+  "users": [
+    { "id": 1, "name": "Alice", "email": "alice@exemplo.com" },
+    { "id": 2, "name": "Bob", "email": "bob@exemplo.com" }
+  ],
+  "shopping-list": [
+    {
+      "id": 1,
+      "title": "Banana",
+      "userId": 2
+    },
+    {
+      "id": 2,
+      "title": "Nescau ball",
+      "userId": 1
+    }
+  ],
+  "shopping-list-buy": [
+    {
+      "id": 1,
+      "title": "Aveia",
+      "userId": 2
+    },
+    {
+      "id": 2,
+      "title": "Cebola",
+      "userId": 1
+    }
+  ]
+ }
