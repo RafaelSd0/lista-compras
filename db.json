@@ -20,6 +20,12 @@
       "userId": "google-oauth2|111960071203575145793",
       "itemLista": [
         {
+          "id": 0,
+          "nome": "rerre"
+        }
+      ],
+      "itemComprado": [
+        {
           "id": 1,
           "nome": "tevaldo"
         },
@@ -27,8 +33,7 @@
           "id": 2,
           "nome": "cavalo"
         }
-      ],
-      "itemComprado": []
+      ]
     }
   ]
 }

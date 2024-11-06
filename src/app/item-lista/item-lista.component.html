@@ -7,12 +7,17 @@
 <br>
 <span class="pl-3 xl:text-4xl md:text-3xl text-2xl">Não comprados</span>
 
-<ul>
-  <li *ngFor="let item of itemLista; let i = index" class="flex gap-5 bg-slate-50 py-2 justify-between items-center">
+<ul class=" flex flex-col gap-5">
+  <li *ngFor="let item of itemLista; let i = index" class="flex gap-5 bg-slate-50 py-2 justify-between items-center px-5">
 
-    <div class="flex justify-around gap-3 pr-5">
-      <button (click)="editaItem(item)" class=" bg-green-600 p-1 border border-black shadow shadow-white hover:bg-green-600/90 transition duration-300 ease-in-out rounded ">Editar</button> <!-- Botão para alternar entre editar e salvar -->
-      <button (click)="removeItem(i)" class=" bg-red-600 p-1 border border-black shadow shadow-white hover:bg-red-600/90 transition duration-300 ease-in-out rounded ">remover</button>
+    <span class=" font-sans text-base md:text-xl max-w-64 md:max-w-96 overflow-auto">{{item.nome}}</span>
+
+    <div class="flex justify-around gap-3 ">
+
+      <input (input)="mudaCompra(i)" type="checkbox" name="check" id="check" class="h-8 w-8 text-indigo-600 border-gray-300 rounded">
+      <button (click)="editaItem(item)" class=" bg-green-600 p-1 border border-black shadow shadow-white hover:bg-green-600/90 transition duration-300 ease-in-out rounded ">Editar</button>
+      <button (click)="removeItem(i)" class=" bg-red-600 p-1 border border-black shadow shadow-white hover:bg-red-600/90 transition duration-300 ease-in-out rounded ">Remover</button>
+
     </div>
   </li>
 </ul>
@@ -20,9 +25,12 @@
 
 <span class="pl-3 xl:text-4xl md:text-3xl text-2xl">Comprados</span>
 
-<ul >
-  <li *ngFor="let item of itemComprado; let i = index" class="flex gap-5 bg-slate-50 py-2 justify-between items-center">
-    <span class="pl-5 xl:text-xl md:text-lg text-base md:max-w-96 max-w-64 line-through text-red-500 overflow-auto">{{item}} </span>
-    <button (click)="removeItemComprado(i)" class=" bg-red-600 p-1 border border-black shadow shadow-white hover:bg-red-600/90 transition duration-300 ease-in-out rounded " >remover</button>
+<ul class=" flex flex-col gap-5">
+  <li *ngFor="let item of itemComprado; let i = index" class="flex gap-5 bg-slate-50 py-2 justify-between items-center px-5">
+
+    <span class=" font-sans md:text-xl text-base md:max-w-96 max-w-64 line-through text-red-500 overflow-auto">{{item.nome}} </span>
+
+    <button (click)="removeItemComprado(i)" class=" bg-red-600 p-1 border border-black shadow shadow-white hover:bg-red-600/90 transition duration-300 ease-in-out rounded " >Remover</button>
+
   </li>
 </ul>
