@@ -16,35 +16,14 @@
   ],
   "shoppingLists": [
     {
-      "id": "1",
-      "userId": 1,
-      "items": [
-        {
-          "id": 1,
-          "title": "Apples",
-          "included": false
-        },
-        {
-          "id": 2,
-          "title": "Bananas",
-          "included": true
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "userId": 2,
-      "items": [
-        {
-          "id": 3,
-          "title": "Milk",
-          "included": false
-        },
-        {
-          "id": 4,
-          "title": "Bread",
-          "included": true
-        }
+      "userId": "e835",
+      "comprados": [
+        { "id": 1, "title": "Apples" },
+        { "id": 2, "title": "Oranges" }
+      ],
+      "naoComprados": [
+        { "id": 3, "title": "Bread" },
+        { "id": 4, "title": "Milk" }
       ]
     }
   ]
