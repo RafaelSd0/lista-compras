@@ -1,0 +1,8 @@
+{
+  "/auth": {
+    "target": "https://dev-h1akqwp5consne5a.us.auth0.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": { "^/auth": "" }
+  }
+}
