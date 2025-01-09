@@ -1,11 +1,11 @@
 
 <form #shoppingForm="ngForm" (ngSubmit)="onSubmit(shoppingForm)" class="py-10 flex gap-5 bg-slate-50 max-w-screen-lg w-screen justify-center items-center rounded-lg px-5">
-  <span class="text-base md:text-xl lg:text-2xl">Nome do Item:</span>
+  <span class="text-base md:text-xl lg:text-2xl font-sans">Nome do Item:</span>
   <input type="text" id="item" placeholder="Digite o nome do Item" [(ngModel)]="item" name="item" required class=" xl:text-xl md:text-lg text-base w-60 md:w-80">
   <button type="submit" [disabled]="shoppingForm.invalid" class=" bg-green-600 p-1 border border-black shadow shadow-white hover:bg-green-600/90 transition duration-300 ease-in-out rounded ">Enviar</button>
 </form>
 <br>
-<span class="pl-3 xl:text-4xl md:text-3xl text-2xl">Não comprados</span>
+<span class="pl-3 xl:text-4xl md:text-3xl text-2xl font-sans">Não comprados</span>
 
 <ul class=" flex flex-col gap-5">
   <li *ngFor="let item of itemLista; let i = index" class="flex gap-5 bg-slate-50 py-2 justify-between items-center px-5">
@@ -23,7 +23,7 @@
 </ul>
 <br>
 
-<span class="pl-3 xl:text-4xl md:text-3xl text-2xl">Comprados</span>
+<span class="pl-3 xl:text-4xl md:text-3xl text-2xl font-sans">Comprados</span>
 
 <ul class=" flex flex-col gap-5">
   <li *ngFor="let item of itemComprado; let i = index" class="flex gap-5 bg-slate-50 py-2 justify-between items-center px-5">
