@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ItensService } from '../services/itens.service';
-import { AuthService } from '@auth0/auth0-angular';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -19,15 +18,10 @@ export class ItemListaComponent {
   itemLista: { id: number; nome: string }[] = []; // Lista de itens não comprados
   itemComprado: { id: number; nome: string }[] = []; // Lista de itens comprados
 
-  constructor(private itensService: ItensService, private auth: AuthService) {}
+  constructor(private itensService: ItensService) {}
 
   ngOnInit() {
-    this.auth.user$.subscribe((user) => {
-      if (user) {
-        this.userId = user.sub;
-        this.carregarLista();
-      }
-    });
+    
   }
 
   // Método para salvar a lista de compras no json-server
@@ -102,7 +96,7 @@ export class ItemListaComponent {
   // Método para remover um item da lista comprada
   removeItemComprado(index: number) {
     this.itemComprado.splice(index, 1);
-    this.salvarLista(); 
+    this.salvarLista();
   }
 
 

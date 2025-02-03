@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AuthService } from '@auth0/auth0-angular';
 import { Observable, of } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
 
@@ -9,7 +8,7 @@ import { catchError, switchMap } from 'rxjs/operators';
 })
 export class ItensService {
   private apiUrl = 'http://localhost:3000/shoppingLists';
-  constructor(private http: HttpClient, private auth: AuthService) {}
+  constructor(private http: HttpClient) {}
 
   // Método para enviar as listas de compras do usuário autenticado ao json-server
   salvarListaDeCompras(userId: string, itemLista: any[], itemComprado: any[] ): Observable<any>{
