@@ -31,7 +31,7 @@ export class HeaderComponent {
   
   }
 
-  //Mostrar menu para usuarios do Mobile
+  //Mostrar menu para usuários do Mobile
   mostrarMenu(): void {
     const menu = this.document.querySelector('#menu') as HTMLDivElement | null;
     if (!menu) return;

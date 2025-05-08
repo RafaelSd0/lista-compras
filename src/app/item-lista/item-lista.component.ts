@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ItensService } from '../services/itens.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -18,41 +17,15 @@ export class ItemListaComponent {
   itemLista: { id: number; nome: string }[] = []; // Lista de itens não comprados
   itemComprado: { id: number; nome: string }[] = []; // Lista de itens comprados
 
-  constructor(private itensService: ItensService) {}
 
-  ngOnInit() {
-    
-  }
-
-  // Método para salvar a lista de compras no json-server
+  // Método para salvar a lista de compras 
   salvarLista() {
-    if (this.userId) {
-      this.itensService.salvarListaDeCompras(this.userId, this.itemLista, this.itemComprado).subscribe({
-        next: (response) => console.log('Lista de compras salva:', response),
-        error: (error) => console.error('Erro ao salvar a lista:', error)
-      });
-    } else {
-      console.error('Erro: User ID não encontrado.');
-    }
+   
   }
 
- // Método para carregar a lista de compras no json-server
+ // Método para carregar a lista de compras
   carregarLista() {
-    if (this.userId) {
-      this.itensService.carregarListaDeCompras(this.userId).subscribe({
-        next: (lista) => {
-          if (lista) {
-            this.itemLista = lista.itemLista || [];
-            this.itemComprado = lista.itemComprado || [];
-          } else {
-            console.log('Nenhuma lista encontrada para este usuário.');
-          }
-        },
-        error: (error) => console.error('Erro ao carregar a lista:', error)
-      });
-    } else {
-      console.error('Erro: User ID não encontrado.');
-    }
+    
   }
 
   // Método para adicionar um item à lista não comprada
