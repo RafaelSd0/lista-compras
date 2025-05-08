@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @Component({
   selector: 'app-item-lista',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule, MatFormFieldModule, MatInputModule, MatButtonModule],
   templateUrl: './item-lista.component.html',
   styleUrl: './item-lista.component.css'
 })
